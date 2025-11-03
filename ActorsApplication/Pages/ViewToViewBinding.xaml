@@ -4,14 +4,29 @@
              x:Class="ActorsApplication.Pages.ViewToViewBinding"
              Title="ViewToViewBinding">
     <VerticalStackLayout Padding="10,0" >
-        <VerticalStackLayout MinimumHeightRequest="200" HorizontalOptions="Center" VerticalOptions="Center" 
+        <VerticalStackLayout MinimumHeightRequest="200" 
+                             HorizontalOptions="Center" 
+                             VerticalOptions="Center" 
                              Padding="0,150">
-            <Label Text="Text"></Label>
+            <Label Text="Text"
+                   Rotation="{Binding
+                        Source={x:Reference rotationSlider},
+                        Path=Value}"
+                   FontSize="{Binding 
+                        Source={x:Reference sizeSlider},
+                        Path=Value}"
+                   BackgroundColor="{Binding
+                        Source={x:Reference colorPicker},
+                        Path=SelectedItem}">
+            </Label>
         </VerticalStackLayout>
         <HorizontalStackLayout>
             <Label Text="Text color:" VerticalOptions="Center"></Label>
             <Picker x:Name="colorPicker"
-                    Title="Select a color">
+                    Title="Select a color"
+                    BackgroundColor="{Binding 
+                        Source={x:Reference colorPicker},
+                        Path=SelectedItem}">
                 <Picker.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
                         <x:String>Green</x:String>
