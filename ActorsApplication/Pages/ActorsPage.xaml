@@ -46,9 +46,10 @@
 
                                 <Label VerticalOptions="Center"
                                        Text="{Binding FullName}"
+                                       TextColor="{Binding Converter={StaticResource AgeToColorConverter}}"
                                        FontAttributes="Bold" />
 
-                                <Label Text="{Binding BirthYear}"
+                                <Label Text="{Binding BirthYear, Converter={StaticResource AgeConverter}}"
                                        MaxLines="4"
                                        VerticalOptions="Start"
                                        FontAttributes="Italic" />
