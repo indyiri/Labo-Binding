@@ -8,6 +8,7 @@
         <ResourceDictionary>
             <converter:AgeConverter x:Key="AgeConverter"/>
             <converter:AgeToColorConverter x:Key="AgeToColorConverter"/>
+            <converter:FirstNameToBackgroundConverter x:Key="FirstNameToBackgroundConverter"/>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
                 <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
