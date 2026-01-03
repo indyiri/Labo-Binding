@@ -5,16 +5,16 @@
              xmlns:pages="clr-namespace:ActorsApplication.Pages"
              x:Class="ActorsApplication.Pages.ActorsPage"
              Title="ActorsPage"
-             x:DataType="pages:ActorsPage"
-             Shell.NavBarIsVisible="False">
+             x:DataType="pages:ActorsPage">
 
     <ScrollView>
         <StackLayout>
             <Label Text="Actors of the day" 
-                Margin="8,8,8,0" 
-                FontSize="Medium" 
-                TextColor="Crimson" 
-                FontAttributes="Bold"/>
+                   Margin="8,8,8,0" 
+                   FontSize="Medium" 
+                   TextColor="Crimson" 
+                   FontAttributes="Bold"/>
+
             <CollectionView ItemsSource="{Binding ActorsList}">
 
                 <CollectionView.ItemsLayout>
@@ -25,6 +25,10 @@
                     <DataTemplate x:DataType="models:Actor">
 
                         <Grid Margin="6" >
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnActorTapped" NumberOfTapsRequired="1" />
+                            </Grid.GestureRecognizers>
+
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="1*" />
                                 <ColumnDefinition Width="2*" />
@@ -60,7 +64,12 @@
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
-            <!--<Button Text="Add Actor" Clicked="AddActorClicked"></Button>-->
+
+            <Button Text="Add Actor"
+                    Clicked="AddActorClicked"
+                    HorizontalOptions="Center"
+                    Margin="12" />
+
         </StackLayout>
     </ScrollView>
 </ContentPage>

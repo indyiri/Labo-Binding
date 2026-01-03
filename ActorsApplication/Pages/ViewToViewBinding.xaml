@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ActorsApplication.Pages.ViewToViewBinding"
              Title="ViewToViewBinding">
+    
     <VerticalStackLayout Padding="10,0" >
         <VerticalStackLayout MinimumHeightRequest="200" 
                              HorizontalOptions="Center" 

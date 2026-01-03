@@ -21,6 +21,12 @@ public partial class ActorDetailPage : ContentPage
         };
     }
 
+    // New constructor to receive an Actor when navigating from the list
+    public ActorDetailPage(Actor actor) : this()
+    {
+        selectedActor = actor ?? selectedActor;
+    }
+
     protected override void OnAppearing()
     {
         this.BindingContext = selectedActor;

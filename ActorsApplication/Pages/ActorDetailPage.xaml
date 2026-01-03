@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ActorsApplication.Pages.ActorDetailPage"
              Title="{Binding FullName}">
+    
     <VerticalStackLayout x:Name="ActorDetailStack">
         <Image WidthRequest="150" 
                Source="{Binding ProfilePicture}">
@@ -26,10 +27,6 @@
             Margin="10" 
             Text="{Binding ShortBio}">
         </Label>
-        <Button 
-            Text="Change Actor Details" 
-            Clicked="DemoChange">
-        </Button>
     </VerticalStackLayout>
     
 </ContentPage>
